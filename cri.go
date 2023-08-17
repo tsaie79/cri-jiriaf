@@ -32,7 +32,7 @@ import (
 // TODO: Make these configurable
 const CriSocketPath = "/run/containerd/containerd.sock"
 const PodLogRoot = "/var/log/vk-cri/"
-const PodVolRoot = "/run/vk-cri/volumes/"
+const PodVolRoot = "/run/vk-cri/volumes/" 
 const PodLogRootPerms = 0755
 const PodVolRootPerms = 0755
 const PodVolPerms = 0755
@@ -845,7 +845,7 @@ func (p *Provider) capacity(ctx context.Context) v1.ResourceList {
 	return v1.ResourceList{
 		"cpu":    cpuQ,
 		"memory": memQ,
-		"pods":   resource.MustParse("1000"),
+		"pods": resource.MustParse("1"),
 	}
 }
 
